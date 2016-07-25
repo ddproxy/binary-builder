@@ -113,8 +113,19 @@ end
 class LuaPeclRecipe < PeclRecipe
   def configure_options
     [
-      "--with-php-config=#{@php_path}/bin/php-config",
-      "--with-lua=#{@lua_path}"
+        "--with-php-config=#{@php_path}/bin/php-config",
+        "--with-lua=#{@lua_path}"
+    ]
+  end
+end
+
+class MapnikRecipe < PeclRecipe
+  def url
+    "https://github.com/garrettrayj/php7-mapnik/archive/#{version}.tar.gz"
+  end
+  def configure_options
+    [
+        "--with-mapnik"
     ]
   end
 end

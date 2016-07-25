@@ -165,6 +165,7 @@ class Php5Meal
     libmemcached_recipe.cook
 
     # php extensions
+    standard_pecl('apcu', '4.0.11', '13c0c0dd676e5a7905d54fa985d0ee62')
     standard_pecl('igbinary', '1.2.1', '04a2474ff5eb99c7d0007bf9f4e8a6ec')
     standard_pecl('imagick', '3.4.1', 'cc4f119a5f27b582f0f10e61451e266f')
     standard_pecl('gearman', '1.1.2', 'fb3bc8df2d017048726d5654459e8433')
@@ -174,7 +175,7 @@ class Php5Meal
     standard_pecl('mongodb', '1.1.6', '8618d27f2ac2dca5c0b39eed22b892af')
     standard_pecl('msgpack', '0.5.7', 'b87b5c5e0dab9f41c824201abfbf363d')
     standard_pecl('protocolbuffers', '0.2.6', 'a304ca632b0d7c5710d5590ac06248a9')
-    standard_pecl('redis', '2.2.7', 'c55839465b2c435fd091ac50923f2d96')
+    standard_pecl('redis', '2.2.8', 'b6c998a6904cb89b06281e1cfb89bc4d')
     standard_pecl('solr', '2.4.0', '2c9accf66681a3daaaf371bc07e44902')
     standard_pecl('sundown', '0.3.11', 'c1397e9d3312226ec6c84e8e34c717a6')
     standard_pecl('xdebug', '2.4.0', 'f49fc01332468f8b753fb37115505fb5')

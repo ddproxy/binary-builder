@@ -8,6 +8,7 @@ class NginxRecipe < BaseRecipe
       '--error-log-path=stderr',
       '--with-http_ssl_module',
       '--with-http_realip_module',
+      '--with-http_perl_module',
       '--with-http_gunzip_module',
       '--with-http_gzip_static_module',
       '--with-http_auth_request_module',

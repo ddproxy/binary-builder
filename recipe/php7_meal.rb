@@ -144,7 +144,7 @@ class Php7Meal
       sudo ln -fs /usr/include/x86_64-linux-gnu/gmp.h /usr/include/gmp.h
       sudo ln -fs /usr/lib/x86_64-linux-gnu/libldap.so /usr/lib/libldap.so
       sudo ln -fs /usr/lib/x86_64-linux-gnu/libldap_r.so /usr/lib/libldap_r.so
-    eof
+      eof
 
     php_recipe.cook
     php_recipe.activate
@@ -159,6 +159,7 @@ class Php7Meal
     standard_pecl('mailparse', '3.0.1', '5ae0643a11159414c7e790c73a9e25ec')
     standard_pecl('mongodb', '1.1.6', '8618d27f2ac2dca5c0b39eed22b892af')
     standard_pecl('msgpack', '2.0.1', '4d1db4592ffa4101601aefc794191de5')
+    standard_pecl('redis', '3.0.0', '1b90e954afc1f9993cc0552d0f1d1daa')
     standard_pecl('solr', '2.4.0', '2c9accf66681a3daaaf371bc07e44902')
     standard_pecl('xdebug', '2.4.0', 'f49fc01332468f8b753fb37115505fb5')
     standard_pecl('yaf', '3.0.3', '74504e8f0ed7c346804c5a5043a5682b')
@@ -193,6 +194,7 @@ class Php7Meal
       lua_recipe.send(:files_hashs) +
       luapecl_recipe.send(:files_hashs) +
       amqppecl_recipe.send(:files_hashs) +
+      mapnik_recipe.send(:files_hashs) +
       @pecl_recipes.collect { |r| r.send(:files_hashs) }.flatten
   end
 
@@ -217,5 +219,10 @@ class Php7Meal
     @luapecl_recipe ||= LuaPeclRecipe.new('lua', '2.0.1', md5: '56924db266f3748a0432328e764b7782',
                                                           php_path: php_recipe.path,
                                                           lua_path: lua_recipe.path)
+  end
+
+  def mapnik_recipe
+    @luapecl_recipe ||= MapnikRecipe.new('mapnik', '1.0.0', md5: '24',
+                                                          php_path: php_recipe.path)
   end
 end
